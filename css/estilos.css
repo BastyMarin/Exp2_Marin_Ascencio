@@ -1,0 +1,22 @@
+.fondo{
+    background-color: blue;
+} 
+
+.color{
+    color: white;
+}
+
+.reloj{
+    left: 44%;
+    position: relative;
+    display: inline-block;
+    background: rgb(173, 189, 173);
+    color: rgb(241, 233, 231);
+    padding: 30px;
+    font-weight: bold;
+    font-size: 25px;
+    border-radius: 3px;
+    border: 3px solid yellowgreen;
+
+
+}

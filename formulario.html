@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <title>Formulario</title>
+    <style>
+        body{
+          background-image: url('img/fondoHolyPlsntita.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            $("#mi-formulario").validate({
+                rules:{
+                    nom:{
+                        required:true,
+                    },
+                    app:{
+                        required:true,
+                    },
+                    apm:{
+                        required:true,
+                    },
+                    email:{
+                        required:true,
+                        email:true
+                    },
+                    fono:{
+                        required:true,
+                        number:true
+                    },
+                    direc:{
+                        required:true,
+                    },
+                    comu:{
+                        required:true,
+                    },
+                    vemail:{
+                       requiered:true,
+                       email:true 
+                    },
+                    sorteo:{
+                        required:true,
+                    },
+                },//rules
+                messages:{
+                    nom:{
+                        required: 'Ingrese nombre del usuario',
+                        minlength: 'Caracteres insufucientes'
+                    },
+                    app:{
+                        required: 'Ingrese su Apellido Paterno',
+                        minlength: 'Caracteres insufucientes'
+                    },
+                    apm:{
+                        required: 'Ingrese su Apellido Materno',
+                        minlength: 'Caracteres insufucientes'
+                    },
+                    email:{
+                        required: 'Ingrese correo',
+                        minlength: 'Formato de correo no valido'
+                    },
+                    fono:{
+                        required: 'Ingrese un numero de telefono',
+                        minlength: 'Cantidad de digitos insuficientes'
+                    },
+                    direc:{
+                        required: 'Ingrese Su Direccion',
+                        minlength:'Caracteres insuficientes'
+                    },
+                    comu:{
+                        required:"Ingrese La Comuna De Su Domicilio",
+                        minlength:"Caracteres Insuficientes"
+                    },
+                    vemail:{
+                        required:"Verifique Su Correo Electronico",
+                        minlength:"Los Correos No Coinciden/Caracteres Insuficientes"
+                    },
+                    sorteo:{
+                        required:"Desea Participar de nuestro sorteo de una planta gratis a eleccion?[si/no]"
+                    }
+                }
+            })
+        })
+
+        function upperText(texto)
+        {
+        const x = texto;
+        x.value= x.value.toUpperCase();
+            }
+            function colorGreen(obj){
+        obj.style.backgroundColor='grey';
+        }
+
+        function colorBlanco(obj){
+            obj.style.backgroundColor='white';
+        }
+
+        function upperText(texto)
+        {
+            const x = texto;
+            x.value= x.value.toUpperCase();
+        }
+
+        function enviar(){
+            alert("Su formulario ha sido enviado existosamente, (si decidió ingresar a nuestro sorteo,esté atento a nuestras redes sociales y su correo electronico. Muchisima Suerte :D!)");
+}
+        </script>
+   
+</head>
+<body>
+    <div class="container">
+        <h2>Ingrese sus Datos:</h2>
+        <form id="mi-formulario" method="post">
+            
+            <div class="form-group">
+                <label for="nom"><mark>Nombre: </mark></label>
+                <input type="text" placeholder="Ingrese su Nombre" minlength="3"
+                maxlength="20" required id="nom" name="nom" class="form-control" onchange="upperText(this)" >
+            </div>
+
+            <div class="form-group">
+                <label for="app"><mark>Apellido Paterno: </mark></label>
+                <input type="text" placeholder="Ingrese su Apellido Paterno" minlength="3"
+                maxlength="20" required id="app" name="app" class="form-control" onchange="upperText(this)">
+            </div>
+
+            <div class="form-group">
+                <label for="apm"><mark>Apellido Materno: </mark></label>
+                <input type="text" placeholder="Ingrese su Apellido Materno" minlength="3"
+                maxlength="20" required id="apm" name="apm" class="form-control" onchange="upperText(this)">
+            </div>
+
+            <div class="form-group">
+                <label for="email"><mark>Correo Electrónico:</mark></label>
+                <input type="text" name="email" id="email" required placeholder="Ejemplo: nombre@dominio.cl" class="form-control" onchange="upperText(this)">
+            </div>
+            <div class="form-group">
+                <label for="vemail"><mark>Verificacion De Correo Electronico: </mark></label>
+                <input type="text" name="vemail" id="vemail" required placeholder="(Vuelva a Ingresar Su Correo Electronico)" class="form-control" onchange="upperText(this)">
+            </div>
+
+            <div class="form-group">
+                <label for="fono"><mark>Celular: </mark></label>
+                <input type="number" id="fono" name="fono" required
+                    class="form-control" placeholder="Digite su Número de contacto.."
+                    minlength="9" maxlength="10">
+            </div>
+            <div class="form-group">
+                <label for="direc"><mark>Direccion: </mark></label>
+                <input type="text" placeholder="Ingrese Su Dirección" minlength="3"
+                maxlength="20" required id="direc" name="direc" class="form-control" onchange="upperText(this)">
+            </div>
+            <div class="form-group">
+                <label for="comu"><mark>Comuna</mark></label>
+                <input type="text" placeholder="Ingrese Su Comuna De Residencia" minlength="3"
+                maxlength="25" required id="comu" name="comu" class="form-control" onchange="upperText(this)">
+            </div>
+            <div class="form-group">
+                <label for="sorteo"><mark>Sorteo Planta Gratis A Eleccion</mark></label>
+                <input type="sorteo" placeholder="Conteste con un Si O No" minlength="2"
+                maxlength="3" required id="sorteo" name="sorteo" class="form-group" onchange="upperText(this)"
+            </div>
+            <div class="form-group">
+                <label for="carta"></label>
+                <textarea id="carta" class="form-control" rows="3" onmousemove="colorGreen(this)" 
+                        onmouseout="colorBlanco(this)">
+
+                </textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Enviar" id="Enviar" class="btn btn-primary" onclick="enviar()">
+                <input type="reset" value="Limpiar" id="Limpiar" class="btn btn-warning">
+            </div>
+        </form>    
+    </div>
+</body>
+</html>
